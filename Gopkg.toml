@@ -24,26 +24,17 @@
 #   go-tests = true
 #   unused-packages = true
 
-
-[[constraint]]
-  name = "github.com/aws/aws-sdk-go"
-  version = "1.15.38"
-
 [[constraint]]
   name = "github.com/gin-gonic/gin"
   version = "1.3.0"
-
-[[constraint]]
-  name = "github.com/satori/go.uuid"
-  version = "1.2.0"
 
 [[constraint]]
   name = "github.com/spf13/viper"
   version = "1.2.0"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/cowboy-coding/go-gin-boilerplate"
+  name = "github.com/jinzhu/gorm"
+  version = "1.9.1"
 
 [prune]
   go-tests = true
