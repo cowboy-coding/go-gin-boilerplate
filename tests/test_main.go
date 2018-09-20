@@ -3,10 +3,10 @@ package tests
 import (
 	"testing"
 
+	"github.com/cowboy-coding/go-gin-boilerplate/config"
+	"github.com/cowboy-coding/go-gin-boilerplate/controllers"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
-	"github.com/vsouza/go-gin-boilerplate/config"
-	"github.com/vsouza/go-gin-boilerplate/controllers"
 )
 
 func Test(t *testing.T) { Testing(t) }

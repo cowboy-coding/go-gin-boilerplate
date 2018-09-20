@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/vsouza/go-gin-boilerplate/models"
+	"github.com/cowboy-coding/go-gin-boilerplate/models"
 )
 
 type UserController struct{}
