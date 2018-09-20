@@ -61,6 +61,12 @@ dep ensure
 cp config/development.example.yaml config/development.yaml
 ```
 
+## Run test with
+
+```sh
+go test -v
+```
+
 ## Usage example
 
 `curl http://localhost:8080/health`
