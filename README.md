@@ -47,14 +47,16 @@ Setup DynamoDB dependency:  `docker run -d -p 8080:8080 vsouza/dynamo-local --po
 
 ## Installation
 
-__Install Godeps__
+__Install golang/dep__
 
-`go get github.com/tools/godep`
+```sh
+brew install dep
+```
 
 then run:
 
 ```sh
-make deps
+dep ensure
 ```
 
 ## Usage example
