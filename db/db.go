@@ -1,25 +1,27 @@
 package db
 
 import (
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
+	"fmt"
+	"log"
+
 	"github.com/cowboy-coding/go-gin-boilerplate/config"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
-var db *dynamodb.DynamoDB
+var db *gorm.DB
 
 func Init() {
 	c := config.GetConfig()
-	db = dynamodb.New(session.New(&aws.Config{
-		Region:      aws.String(c.GetString("db.region")),
-		Credentials: credentials.NewEnvCredentials(),
-		Endpoint:    aws.String(c.GetString("db.endpoint")),
-		DisableSSL:  aws.Bool(c.GetBool("db.disable_ssl")),
-	}))
+	config_string := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s", c.GetString("db.host"), c.GetString("db.port"), c.GetString("db.user"), c.GetString("db.dbname"), c.GetString("db.password"))
+	log.Print(config_string)
+	db, err := gorm.Open("postgres", config_string)
+	if err == nil {
+	}
+
+	defer db.Close()
 }
 
-func GetDB() *dynamodb.DynamoDB {
+func GetDB() *gorm.DB {
 	return db
 }

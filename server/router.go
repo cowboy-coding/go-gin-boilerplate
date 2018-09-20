@@ -2,7 +2,6 @@ package server
 
 import (
 	"github.com/cowboy-coding/go-gin-boilerplate/controllers"
-	"github.com/cowboy-coding/go-gin-boilerplate/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,14 +13,16 @@ func NewRouter() *gin.Engine {
 	health := new(controllers.HealthController)
 
 	router.GET("/health", health.Status)
-	router.Use(middlewares.AuthMiddleware())
+	// add middlewares here. e.g. router.Use(middlewares.AuthMiddleware())
 
 	v1 := router.Group("v1")
 	{
-		userGroup := v1.Group("user")
+		userGroup := v1.Group("users")
 		{
-			user := new(controllers.UserController)
-			userGroup.GET("/:id", user.Retrieve)
+			users := new(controllers.UsersController)
+
+			// http localhost:8080/v1/users/112
+			userGroup.GET("/:id", users.Show)
 		}
 	}
 	return router

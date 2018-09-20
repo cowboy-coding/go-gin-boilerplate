@@ -1,26 +1,16 @@
 package controllers
 
 import (
-	"github.com/gin-gonic/gin"
+	"net/http"
+
 	"github.com/cowboy-coding/go-gin-boilerplate/models"
+	"github.com/gin-gonic/gin"
 )
 
-type UserController struct{}
+type UsersController struct{}
 
 var userModel = new(models.User)
 
-func (u UserController) Retrieve(c *gin.Context) {
-	if c.Param("id") != "" {
-		user, err := userModel.GetByID(c.Param("id"))
-		if err != nil {
-			c.JSON(500, gin.H{"message": "Error to retrieve user", "error": err})
-			c.Abort()
-			return
-		}
-		c.JSON(200, gin.H{"message": "User founded!", "user": user})
-		return
-	}
-	c.JSON(400, gin.H{"message": "bad request"})
-	c.Abort()
-	return
+func (u UsersController) Show(c *gin.Context) {
+	c.String(http.StatusOK, "User.show")
 }
