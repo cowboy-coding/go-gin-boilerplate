@@ -1,1 +1,1 @@
-web: ./go-gin-boilerplate -e development
+web: go run main.go -e development

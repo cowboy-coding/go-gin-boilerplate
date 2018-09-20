@@ -1,5 +1,7 @@
 .swp
-config/prod.yaml
 build/
 vendor/
 go-gin-boilerplate
+config/development.yaml
+config/production.yaml
+config/test.yaml
