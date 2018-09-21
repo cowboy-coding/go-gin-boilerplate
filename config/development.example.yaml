@@ -6,3 +6,6 @@ db:
   port: 5432
   dbname: go-gin-boilerplate-devlopment
   password: "password"
+jwt:
+  realm: "test realm"
+  secret_key: "secret key"
