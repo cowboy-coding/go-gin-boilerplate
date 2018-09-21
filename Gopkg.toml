@@ -27,10 +27,6 @@
 
 [[constraint]]
   branch = "master"
-  name = "github.com/appleboy/gin-jwt"
-
-[[constraint]]
-  branch = "master"
   name = "github.com/gin-gonic/gin"
 
 [[constraint]]

@@ -2,28 +2,12 @@
 
 
 [[projects]]
-  branch = "master"
-  digest = "1:e128ee640807c9f91e849c6ac661789f10facd82c30d1d429936dd63b6015821"
-  name = "github.com/appleboy/gin-jwt"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "a4d85f559a8daf618d7925dc6d896524d7d7777a"
-
-[[projects]]
   digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   pruneopts = "UT"
   revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
   version = "v1.1.1"
-
-[[projects]]
-  branch = "master"
-  digest = "1:6e9d2dddd10b5668251398cbd9848b2ea7ebec447d88255abd1437b96c487eb4"
-  name = "github.com/dgrijalva/jwt-go"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "0b96aaa707760d6ab28d9b9d1913ff5993328bae"
 
 [[projects]]
   branch = "master"
