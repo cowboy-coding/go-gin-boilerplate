@@ -81,6 +81,16 @@ Run tests with
 go test -v ./...
 ```
 
+Writing tests, have a look at https://medium.com/@craigchilds94/testing-gin-json-responses-1f258ce3b0b1
+
+## Adding Golang dependencies
+
+e.g. add the gin-jwt lib
+
+```sh
+dep ensure -add github.com/appleboy/gin-jwt
+```
+
 ## Meta
 
 Vinicius Souza – [@iamvsouza](https://twitter.com/iamvsouza) – hi@vsouza.com
