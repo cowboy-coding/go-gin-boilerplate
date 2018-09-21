@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/cowboy-coding/james-golf-app-gin/server"
+	"github.com/cowboy-coding/go-gin-boilerplate/server"
 	"github.com/stretchr/testify/assert"
 )
 
