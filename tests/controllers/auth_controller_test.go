@@ -30,6 +30,6 @@ func TestAuthControllerCreate(t *testing.T) {
 	assert.Nil(t, err)
 
 	// make suere JWT was created
-	value, exists := response["token"]
+	_, exists := response["token"]
 	assert.True(t, exists)
 }
