@@ -57,19 +57,29 @@ dep ensure
 
 ## Development setup
 
+Copy config and edit development files
+
 ```sh
 cp config/development.example.yaml config/development.yaml
 ```
 
-## Run test with
+Start server
 
 ```sh
-go test -v
+go run main.go
 ```
 
-## Usage example
+Make your first request:
 
 `curl http://localhost:8080/health`
+
+## Test Setup
+
+Run tests with
+
+```sh
+go test -v ./...
+```
 
 ## Meta
 
