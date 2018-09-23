@@ -5,3 +5,4 @@ go-gin-boilerplate
 config/development.yaml
 config/production.yaml
 config/test.yaml
+.vscode/launch.json

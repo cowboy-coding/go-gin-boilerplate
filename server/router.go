@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/cowboy-coding/go-gin-boilerplate/controllers"
-	"github.com/cowboy-coding/go-gin-boilerplate/middlewares"
+	"github.com/cowboy-coding/go-gin-boilerplate/lib/services"
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,7 +17,7 @@ func NewRouter() *gin.Engine {
 
 	// add middlewares here. e.g. router.Use(middlewares.AuthMiddleware())
 	// the jwt middleware
-	jwtAuthMiddleware := middlewares.JwtAuthMiddleware()
+	jwtAuthMiddleware := services.JwtAuthService()
 
 	v1 := router.Group("v1")
 	{
