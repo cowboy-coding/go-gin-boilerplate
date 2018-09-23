@@ -11,22 +11,23 @@ func NewRouter() *gin.Engine {
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 
-	// Health controller is public accesseble
+	// Health controller is public accessible
 	health := new(controllers.HealthController)
 	router.GET("/health", health.Status)
 
 	// add middlewares here. e.g. router.Use(middlewares.AuthMiddleware())
-	// the jwt middleware
-	jwtAuthMiddleware := services.JwtAuthService()
 
 	v1 := router.Group("v1")
 	{
-		// JWT Auth API
+		// Routes without Authentication
+		jwtAuthMiddleware := services.JwtAuthService()
 		v1.POST("/auth", jwtAuthMiddleware.LoginHandler)
 		v1.GET("/auth/refresh_token", jwtAuthMiddleware.RefreshHandler)
 
-		// following routes require AUTH:
+		// JWT Auth Middleware
 		v1.Use(jwtAuthMiddleware.MiddlewareFunc())
+
+		// Routes with Authentication
 		{
 			// User API
 			userGroup := v1.Group("users")
